@@ -92,7 +92,6 @@ CRAZYBIRD	CRAZYBIRD_inst (
 	.clock ( clk ),
 	.q ( q_sig )
 	);
-							
-							
+														
 
 endmodule
