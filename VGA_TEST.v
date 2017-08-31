@@ -1,3 +1,6 @@
+/*this is the top file of vga displaying test project,the VGA_Ctrl.v is the VGA control part and the .mif file is the data of a 225*225 gray picture.
+a rom with a 16bit address is initialized with the mif file and the VGA draws the data of the picture*/
+
 module VGA_TEST(
 	input clk,
 	output reg king,
@@ -27,9 +30,6 @@ wire			m2VGA_Read;	//	Read even field
 reg [9:0] vga_r10;
 reg [9:0] vga_g10;
 reg [9:0] vga_b10;
-//assign VGA_R = vga_r10[9:2];
-//assign VGA_G = vga_g10[9:2];
-//assign VGA_B = vga_b10[9:2];
 
 reg clk_vga;
 always@(posedge clk)
@@ -38,7 +38,7 @@ begin
 end
 
 
-//reg king;
+
 wire q_sig;
 reg [15:0]address_cur;
 wire[15:0]address_sig;
@@ -86,7 +86,7 @@ VGA_Ctrl			u9	(	//	Host Side
 							.iRST_N(1'b1)	
 							);
 
-//assign address_sig=address_cur;
+
 CRAZYBIRD	CRAZYBIRD_inst (
 	.address ( address_cur ),
 	.clock ( clk ),
